@@ -9,11 +9,12 @@
 </head>
 <body>
 <script !src="">
-  setTimeout(greeting, 1000)
+  const TIME_OUT = 1000 // (in miliseconds)
+  setTimeout(greeting, TIME_OUT)
 
   function greeting() {
       document.write("Hello world!<br/>")
-      setTimeout(introduction, 500)
+      setTimeout(introduction, TIME_OUT)
   }
 
   function introduction() {
