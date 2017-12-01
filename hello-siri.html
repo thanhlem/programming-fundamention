@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Siri</title>
+</head>
+<body>
+<script>
+  console.log('siri is sleeping')
+  setTimeout(askForAName, 500)
+
+  function askForAName() {
+    console.log('siri waked up')
+    let name = prompt('Who are you?')
+    console.log('got name: ' + name)
+
+    const DAYS_IN_YEAR = 365
+    const HOURS_IN_DAY = 24
+    let age = prompt('Hello ' + name + ', how old are you?')
+    alert('Holy! It\' means you are ' + age * DAYS_IN_YEAR * HOURS_IN_DAY * 60 + ' minutes old!')
+
+  }
+</script>
+</body>
+</html>
