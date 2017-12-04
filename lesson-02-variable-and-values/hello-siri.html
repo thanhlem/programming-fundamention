@@ -7,18 +7,28 @@
 <body>
 <script>
   console.log('siri is sleeping')
-  setTimeout(askForAName, 500)
+  setTimeout(function() {
+    let name = askForAName();
+    let age = askForAge(name);
+    alert('Holy! It\' means you are ' + toMinutesAge + ' minutes old!')
+
+  }, 500)
 
   function askForAName () {
     console.log('siri waked up')
     let name = prompt('Who are you?')
     console.log('got name: ' + name)
+    return name;
+  }
 
+  function askForAge(name) {
     const DAYS_IN_YEAR = 365
     const HOURS_IN_DAY = 24
     let age = prompt('Hello ' + name + ', how old are you?')
-    alert('Holy! It\' means you are ' + age * DAYS_IN_YEAR * HOURS_IN_DAY * 60 + ' minutes old!')
+  }
 
+  function toMinutesAge(age) {
+    return age * DAYS_IN_YEAR * HOURS_IN_DAY * 60
   }
 
 </script>
