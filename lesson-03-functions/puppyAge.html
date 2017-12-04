@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Puppy Age</title>
+</head>
+<body>
+<script>
+  let name = askForPuppyName()
+  let age = askForPuppyAge()
+  let realAge = calcRealAge(age)
+  document.write(name + " has " + realAge + " years old!")
+
+  function askForPuppyName() {
+    return prompt('What\'s puppy name?')
+  }
+
+  function askForPuppyAge() {
+    return prompt('How old your puppy age?')
+  }
+
+  function calcRealAge(age) {
+    return 7 * age
+  }
+
+</script>
+</body>
+</html>
