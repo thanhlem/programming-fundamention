@@ -16,13 +16,13 @@
     testPluralizer()
 
     function testPluralizer () {
-      assertEqual(pluralize(1, 'dog'), '1 dog', 'no pluralized singles')
-      assertEqual(pluralize(1, 'cat'), '1 cat', 'no pluralized singles')
-      assertEqual(pluralize(2, 'PC'), '2 PCs', 'multiples become pluralized')
-      assertEqual(pluralize(3, 'function'), '1 functions', 'multiples become pluralized')
-      assertEqual(pluralize(100, 'programs'), '100 programs', 'multiples become pluralized')
-      assertEqual(pluralize(101, 'programs'), 'uncountable programs', 'uncountables become pluralized')
-      assertEqual(pluralize(102, 'programs'), 'uncountable programs', 'uncountables become pluralized')
+      assertEquals(pluralize(1, 'dog'), '1 dog', 'no pluralized singles')
+      assertEquals(pluralize(1, 'cat'), '1 cat', 'no pluralized singles')
+      assertEquals(pluralize(2, 'PC'), '2 PCs', 'multiples become pluralized')
+      assertEquals(pluralize(3, 'function'), '1 functions', 'multiples become pluralized')
+      assertEquals(pluralize(100, 'programs'), '100 programs', 'multiples become pluralized')
+      assertEquals(pluralize(101, 'programs'), 'uncountable programs', 'uncountables become pluralized')
+      assertEquals(pluralize(102, 'programs'), 'uncountable programs', 'uncountables become pluralized')
     }
 
   </script>

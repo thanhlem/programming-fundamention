@@ -1,4 +1,4 @@
-function assertEqual( actual, expected, message ) {
+function assertEquals(actual, expected, message ) {
   const PASS = "PASS"
   const FAILED = "FAILED"
 
