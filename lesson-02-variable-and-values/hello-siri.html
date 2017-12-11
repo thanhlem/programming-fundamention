@@ -10,7 +10,7 @@
   setTimeout(function() {
     let name = askForAName();
     let age = askForAge(name);
-    alert('Holy! It\' means you are ' + toMinutesAge + ' minutes old!')
+    alert('Holy! It\' means you are ' + toMinutesAge(age) + ' minutes old!')
 
   }, 500)
 
@@ -22,12 +22,12 @@
   }
 
   function askForAge(name) {
-    const DAYS_IN_YEAR = 365
-    const HOURS_IN_DAY = 24
-    let age = prompt('Hello ' + name + ', how old are you?')
+    return prompt('Hello ' + name + ', how old are you?')
   }
 
   function toMinutesAge(age) {
+    const DAYS_IN_YEAR = 365
+    const HOURS_IN_DAY = 24
     return age * DAYS_IN_YEAR * HOURS_IN_DAY * 60
   }
 
