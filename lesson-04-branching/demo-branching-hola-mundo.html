@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="UTF-8">
+  <meta charset='UTF-8'>
   <title>Demo Branching - Greeting in Multi Langueges</title>
-  <script src="../lesson-03-functions/assert.js"></script>
+  <script src='../lesson-03-functions/assert.js'></script>
   <script>
     // your scripts here
     function greeting () {
@@ -19,19 +19,19 @@
     testGreetingInSwedish()
 
     function testGreetingInEnglish () {
-      assertEqual(greeting("en"), "Hello World!", "greeting by English")
+      assertEqual(greeting('en'), 'Hello World!', 'greeting by English')
     }
 
     function testGreetingInSpanish () {
-      assertEqual(greeting("es"), "Hola Mundo!", "greeting by Spanish")
+      assertEqual(greeting('es'), 'Hola Mundo!', 'greeting by Spanish')
     }
 
     function testGreetingInHebrew () {
-      assertEqual(greeting("il"), "!שלום עולם", "greeting by Hebrew")
+      assertEqual(greeting('il'), '!שלום עולם', 'greeting by Hebrew')
     }
 
     function testGreetingInSwedish () {
-      assertEqual(greeting("se"), "Hej världen!", "greeting by Swedish")
+      assertEqual(greeting('se'), 'Hej världen!', 'greeting by Swedish')
     }
 
   </script>

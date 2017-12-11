@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="UTF-8">
+  <meta charset='UTF-8'>
   <title>Demo Branching - Greater Number</title>
-  <script src="../lesson-03-functions/assert.js"></script>
+  <script src='../lesson-03-functions/assert.js'></script>
   <script>
     // your scripts here
     function pluralize () {
@@ -16,13 +16,13 @@
     testPluralizer()
 
     function testPluralizer () {
-      assertEqual(pluralize(1, "dog"), "1 dog", "no pluralized singles")
-      assertEqual(pluralize(1, "cat"), "1 cat", "no pluralized singles")
-      assertEqual(pluralize(2, "PC"), "2 PCs", "multiples become pluralized")
-      assertEqual(pluralize(3, "function"), "1 functions", "multiples become pluralized")
-      assertEqual(pluralize(100, "programs"), "100 programs", "multiples become pluralized")
-      assertEqual(pluralize(101, "programs"), "uncountable programs", "uncountables become pluralized")
-      assertEqual(pluralize(102, "programs"), "uncountable programs", "uncountables become pluralized")
+      assertEqual(pluralize(1, 'dog'), '1 dog', 'no pluralized singles')
+      assertEqual(pluralize(1, 'cat'), '1 cat', 'no pluralized singles')
+      assertEqual(pluralize(2, 'PC'), '2 PCs', 'multiples become pluralized')
+      assertEqual(pluralize(3, 'function'), '1 functions', 'multiples become pluralized')
+      assertEqual(pluralize(100, 'programs'), '100 programs', 'multiples become pluralized')
+      assertEqual(pluralize(101, 'programs'), 'uncountable programs', 'uncountables become pluralized')
+      assertEqual(pluralize(102, 'programs'), 'uncountable programs', 'uncountables become pluralized')
     }
 
   </script>
