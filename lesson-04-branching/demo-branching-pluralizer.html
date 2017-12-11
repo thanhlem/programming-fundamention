@@ -21,6 +21,8 @@
       assertEqual(pluralize(2, "PC"), "2 PCs", "multiples become pluralized")
       assertEqual(pluralize(3, "function"), "1 functions", "multiples become pluralized")
       assertEqual(pluralize(100, "programs"), "100 programs", "multiples become pluralized")
+      assertEqual(pluralize(101, "programs"), "uncountable programs", "uncountables become pluralized")
+      assertEqual(pluralize(102, "programs"), "uncountable programs", "uncountables become pluralized")
     }
 
   </script>
