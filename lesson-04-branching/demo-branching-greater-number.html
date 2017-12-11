@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo Branching - Greater Number</title>
+  <script src="../lesson-03-functions/assert.js"></script>
+  <script>
+    // your scripts here
+
+  </script>
+</head>
+<body>
+  <script>
+    testThatOneIsGreaterThanZero()
+    testThatOneHundredIsGreaterThanNinetyNine()
+
+    function testThatOneIsGreaterThanZero () {
+      assertEqual(greaterNum(1, 0), 1, "1 is greater than 0")
+      assertEqual(greaterNum(0, 1), 1, "1 is greater than 0")
+    }
+
+    function testThatOneHundredIsGreaterThanNinetyNine () {
+      assertEqual(greaterNum(100, 99), 100, "100 is greater than 99")
+      assertEqual(greaterNum(99, 100), 100, "100 is greater than 99")
+    }
+
+  </script>
+</body>
+</html>
