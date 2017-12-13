@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rectangle Drawing Test</title>
+  <script src="rectangle.js" type="application/javascript"></script>
+  <script src="../lesson-03-functions/assert.js" type="application/javascript"></script>
+</head>
+<body>
+<script !src="">
+  assertEquals(drawRectangle(1, 1), '*\n', 'draw a dot')
+
+  assertEquals(drawRectangle(10, 1), '**********\n', 'draw ten dots')
+  assertEquals(drawRectangle(10, 3),
+    '**********\n' +
+    '**********\n' +
+    '**********\n',
+    'draw rectangle 10x3')
+
+</script>
+</body>
+</html>
