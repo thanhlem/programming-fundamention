@@ -9,9 +9,13 @@
 <body>
 <script !src="">
   'use strict'
+
   assertEquals(drawRectangle(1, 1), '*\n', 'draw a dot')
 
+  assertEquals(drawRectangle(5, 1), '*****\n', 'draw five dots')
+
   assertEquals(drawRectangle(10, 1), '**********\n', 'draw ten dots')
+
   assertEquals(drawRectangle(10, 3),
     '**********\n' +
     '**********\n' +

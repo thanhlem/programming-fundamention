@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The New Siri</title>
+</head>
+<body>
+<script>
+  'use strict'
+
+  const MAXIMUM_TRIAL = 5
+
+  let name
+  let password
+  let counter = 0
+
+  do {
+    name = askName()
+    password = askPassword()
+    counter++
+  } while (!isMaster(name, password) && counter <= MAXIMUM_TRIAL)
+
+  alert('welcome my master!')
+
+  function isMaster(name, pwd) {
+    const MASTER_NAME = 'binhson'
+    const MASTER_PWD = '246357cn'
+    return name === MASTER_NAME && pwd === MASTER_PWD
+  }
+
+  function askName () {
+    console.log('asking for name')
+    let name = prompt('Who are you?')
+    console.log('got name!')
+    return name;
+  }
+
+  function askPassword () {
+    console.log('asking for password')
+    let pwd = prompt('Give me password')
+    console.log('got password!')
+    return pwd;
+  }
+
+
+</script>
+</body>
+</html>
