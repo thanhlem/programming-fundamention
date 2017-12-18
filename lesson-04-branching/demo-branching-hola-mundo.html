@@ -6,8 +6,13 @@
   <script src='../lesson-03-functions/assert.js'></script>
   <script>
     // your scripts here
-    function greeting () {
-      
+    function greeting(language) {
+      if language === 'en' {
+          return 'Hello World!';
+      }
+      //if language === 'es' return 'Hola Mundo!';
+       // if language === 'il' return '!שלום עולם';
+        //if language === 'se' return 'Hej världen!';
     }
   </script>
 </head>
@@ -17,7 +22,7 @@
     testGreetingInSpanish()
     testGreetingInHebrew()
     testGreetingInSwedish()
-
+    greeting(language)
     function testGreetingInEnglish () {
       assertEquals(greeting('en'), 'Hello World!', 'greeting by English')
     }
