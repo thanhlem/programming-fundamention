@@ -9,16 +9,22 @@
 </head>
 <body>
 <script>
-  const TIME_OUT = 1000 // (in miliseconds)
+  const TIME_OUT = 2000 // (in miliseconds)
+
   setTimeout(greeting, TIME_OUT)
 
   function greeting () {
     document.write('Hello world!<br/>')
+
     setTimeout(introduction, TIME_OUT)
+      setTimeout(age, 5000)
   }
 
   function introduction () {
-    document.write('My name is Binh Son')
+    document.write('My name is Binh Son\n')
+  }
+  function age(){
+      document.write('\n I am 40 years old')
   }
 
 </script>
