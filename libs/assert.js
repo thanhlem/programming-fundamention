@@ -11,8 +11,8 @@ function assertEquals(actual, expected, message ) {
 
 }
 
-function assertNotEqual(actual, expected, message ) {
-  let result = expected !== actual
+function assertNotEquals(actual, expected, message ) {
+  let result = expected != actual
   console.log(renderTestResult(result, message))
 }
 
