@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Line Segment Test Test</title>
+  <script src='../libs/line-segment.js' type='application/javascript'></script>
+  <script src='../libs/assert.js' type='application/javascript'></script>
+</head>
+<body>
+<script>
+  'use strict'
+
+  testCreateLineSegmentObject()
+  testCreateLineSegmentObjectWithLength()
+  testPrintLineSegment()
+
+  function testCreateLineSegmentObject() {
+    let lineSeg = createLineSegment()
+    assertNotEquals(lineSeg, null, 'test that linesegment is not null')
+    assertEquals(typeof lineSeg, typeof {}, 'test that linesegment is an object')
+  }
+
+  function testCreateLineSegmentObjectWithLength () {
+    let lineSeg = createLineSegment(3)
+    assertEquals(lineSeg.length, 3, 'test create line segment with length')
+    lineSeg.length = 5
+    assertEquals(lineSeg.length, 5, 'test create line segment with length')
+    lineSeg.length = 10
+    assertEquals(lineSeg.length, 10, 'test create line segment with length')
+  }
+
+  function testPrintLineSegment () {
+    let lineSeg = createLineSegment(5)
+    assertNotEquals(lineSeg.print, null, 'test that linesegment has print property')
+    assertEquals(typeof lineSeg.print, typeof function() {}, 'test that print is a method')
+    assertEquals(lineSeg.print(), '*****', 'test that linesegment\' print method worked!')
+
+    lineSeg.length = 10
+    assertEquals(lineSeg.print(), '**********', 'test that linesegment\' print method worked with new length!')
+
+    lineSeg.length = 20
+    assertEquals(lineSeg.print(), '********************', 'test that linesegment\' print method worked with new length again!')
+  }
+
+
+</script>
+</body>
+</html>
