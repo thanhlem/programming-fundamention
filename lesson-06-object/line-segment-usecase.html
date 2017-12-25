@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Line Segment Test Test</title>
+  <script src='../libs/line-segment.js' type='application/javascript'></script>
+  <script src='../libs/assert.js' type='application/javascript'></script>
+</head>
+<body>
+<script>
+  'use strict'
+  drawRectangle(8, 5)
+
+  function drawRectangle(width, height) {
+    let drawing = ''
+    let remainingLine = height
+    while (remainingLine > 0) {
+      let isFirstLine = remainingLine === height
+      let isLastLine = remainingLine === 1
+      if (isFirstLine || isLastLine) {
+        drawing += solidDrawing(width)
+      } else {
+        drawing += endsOnlyDrawing(width)
+      }
+      drawing += '\n'
+      remainingLine--
+    }
+    console.log(drawing)
+
+    function solidDrawing(width) {
+      return createLineSegment(width, '*', '**').print()
+    }
+
+    function endsOnlyDrawing() {
+      return createLineSegment(width, '*', '\ \ ').print()
+    }
+  }
+
+
+</script>
+</body>
+</html>
