@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fahrenheit To Celsius</title>
+    <script src='../libs/assert.js'></script>
+
+    <script>
+        // viet ham chuyen doi do Fahrenheit to do Celsius
+        function toCelsius(f){
+            let c= 5/9*(f-32)
+            let n=parseFloat(c)
+            c=Math.round(n*100)/100
+            return c
+        }
+        //viet ham chuyen doi do Celsius sang do Fahrenheit
+        function toFahrenheit(c){
+            let f=9/5*c+32
+            return f
+        }
+    </script>
+</head>
+<body>
+<script>
+
+    assertEquals(37.78, toCelsius(100), 'chuyen 100 do F sang do C')
+    assertEquals(194, toFahrenheit(90),'chuyen 90 do C sang do F')
+    assertEquals(32, toFahrenheit(0),'chuyen 0 do C sang do F')
+    assertEquals(-17.78, toCelsius(0),'chuyen 0 do F sang do C')
+
+    let f1=100
+    alert(toCelsius(f1))
+    let f2=0
+    alert(toCelsius(f2))
+    let c1=90
+    alert(toFahrenheit(c1))
+    let c2=0
+    alert(toFahrenheit(c2))
+
+
+</script>
+</body>
+</html>
