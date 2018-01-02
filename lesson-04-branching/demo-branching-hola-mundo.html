@@ -7,12 +7,23 @@
   <script>
     // your scripts here
     function greeting(language) {
-      if language === 'en' {
-          return 'Hello World!';
+      if (language === 'en') {
+          return 'Hello World!'
+
       }
-      //if language === 'es' return 'Hola Mundo!';
-       // if language === 'il' return '!שלום עולם';
-        //if language === 'se' return 'Hej världen!';
+      if (language ==='es'){
+          return 'Hola Mundo!'
+
+      }
+      if (language ==='il') {
+          return '!שלום עולם'
+
+      }
+      if (language === 'se') {
+          return 'Hej världen!'
+
+      }
+
     }
   </script>
 </head>
@@ -22,7 +33,9 @@
     testGreetingInSpanish()
     testGreetingInHebrew()
     testGreetingInSwedish()
-    greeting(language)
+    let language=prompt('Nhap ngon ngu:')
+    document.write(greeting(language))
+
     function testGreetingInEnglish () {
       assertEquals(greeting('en'), 'Hello World!', 'greeting by English')
     }
