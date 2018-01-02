@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Siri hoi mat khau</title>
+</head>
+<body>
+<script>
+    let ten
+    let matkhau
+    let dem=0
+    do {
+        ten = hoiTen()
+        matkhau = hoiMatKhau()
+        dem++
+    } while (!isMaster(ten,matkhau) && dem < 3)
+    if (ten==='Thanh' && matkhau==='12345678') {
+        alert('Ban da nhap dung ten va mat khau!')
+    }
+    else alert('Ban da nhap sai 3 lan. Ban da het quyen dang nhap!')
+
+    function hoiTen()
+    {
+        let ten=prompt('Ten ban la gi')
+        return ten
+    }
+    function hoiMatKhau()
+    {
+        let matkhau=prompt('Mat khau cua ban la gi')
+        return matkhau
+    }
+
+    function isMaster(ten,matkhau){
+        return ten==='Thanh' && matkhau==='12345678'
+    }
+
+</script>
+</body>
+</html>
