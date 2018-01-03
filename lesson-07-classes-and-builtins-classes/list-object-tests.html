@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../libs/qunit/qunit-2.4.1.css">
+  <title>List Library Test</title>
+</head>
+<body>
+
+<!--repare QUnit's fixture -->
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+
+<!--loading QUnit Library-->
+<script type="application/javascript" src="../libs/qunit/qunit-2.4.1.js"></script>
+
+<!--loading List Library-->
+<script type="application/javascript" src="../libs/list.js"></script>
+
+<!--loading ramdom library-->
+<script type="application/javascript" src="../libs/ramdom.js"></script>
+
+<!--test cases-->
+<script>
+  'use strict'
+
+  /**
+   * Đây là bộ testcases giúp chúng ta xây dựng một thư viện tên là `list`. Thư viện
+   * list giúp chúng ta tạo ra những đối tượng có khả năng giúp chúng ta quản lý danh
+   * sách. Danh sách là một cấu trúc dữ liệu kiểu tập hợp có thứ tự, tức là truy cập
+   * các phần tử của nó bằng cách chỉ ra phần tử muốn truy cập là phần tử thứ mấy.
+   *
+   * Bộ testcases này được viết bằng thư viện QUnit thay vì thư viện `assert.js` do
+   * chúng ta tự chế. Tuy nhiên không khó đọc xem "testcase này test cái gì".
+   *
+   * Gợi ý về việc bạn sẽ viết thư viện `list` ở đâu có trên các dòng nạp file javascript
+   * ở phía trên!
+   *
+   * Các bạn chú ý để không gặp các lỗi dùng sai/không dùng từ khóa `this`. Cũng như
+   * việc các đối tượng `list` trong bài này truy cập các phần tử của nó theo thứ tự
+   * bắt đầu từ 0
+   *
+   * Về từ khóa this, Bình Sơn đã viết một hướng dẫn, không quá khó đọc nhưng nên đọc
+   * chậm và hiểu từng chút:
+   *
+   * https://binhsonnguyen.com/2017/12/21/this-keyword-explained.html
+   * https://binhsonnguyen.com/2017/12/21/this-keyword-explained-part-02.html
+   *
+   * Các bạn không nên vội vàng cố gắng qua hết tất cả các testcases, tốt nhất là lập
+   * trình để vượt qua TỪNG TESTCASE MỘT, THEO THỨ TỰ
+   *
+   * Nếu bạn đã lập trình xong thư viện list, hãy thử làm một demo sử dụng thư viện đó
+   * :)
+   *
+   * Chúc các bạn thành công
+   */
+
+  function magicOne () {
+    // đoạn mã dưới đây sử dụng hàm createRandomObj(), bạn không cần phải đọc nội dung
+    // hàm đó quá kỹ, chỉ cần biết rằng hàm đó giúp tạo ra một object có 2 thuộc tính
+    // (cho phép thuộc tính là object) một cách ngẫu nhiên không đoán trước được.
+    return createRandomObj(2, true)
+  }
+
+  QUnit.test('QUnit calling test', function (assertThat) {
+    assertThat.equal(2, 1 + 1, 'assert that QUnit worked')
+  })
+
+  QUnit.test('init list test', function (assertThat) {
+    let l = list()
+    assertThat.equal(typeof l, typeof {}, 'assert that list() function return an object')
+    assertThat.equal(0, l.length, 'test that list object have a length property')
+  })
+
+  QUnit.test('list manipulate its length during push test', function (assertThat) {
+    let l = list()
+
+    l.push(magicOne())
+    assertThat.equal(1, l.length, 'length become 1 after fist pushed')
+
+    l.push(magicOne())
+    assertThat.equal(2, l.length, 'length become 2 after second pushed')
+
+    const PREFERED_LENGTH = 10
+    let nextLength = 3
+    while (nextLength < PREFERED_LENGTH) {
+      l.push(magicOne())
+      assertThat.equal(nextLength, l.length, 'length increase by 1 after each time list pushed test')
+      nextLength++
+    }
+
+  })
+
+  QUnit.test('read pushed element from list test', function (assertThat) {
+    let l = list()
+    let first = magicOne()
+
+    l.push(first)
+    assertThat.equal(first, l[0], 'get first element test')
+
+    let second = magicOne()
+    l.push(second)
+    assertThat.equal(second, l[1], 'get second element test')
+
+    let nextIndex = 2
+    while (nextIndex < 10) {
+      let nextElement = magicOne()
+      l.push(nextElement)
+      assertThat.equal(nextElement, l[nextIndex], 'get nexts element test')
+      nextIndex++
+    }
+  })
+
+  QUnit.test('list manipulate its length during pop test', function (assertThat) {
+    let l = list()
+
+    // prepare some dummie datas
+    let index = 0
+    while (index < 10) {
+      let element = magicOne()
+      l.push(element)
+      index++
+    }
+
+    let lastIndex = 9
+    l.pop()
+    assertThat.equal(lastIndex, l.length, 'list\'s length decrease by 1 after pop test')
+
+    l.pop()
+    lastIndex = 8
+    assertThat.equal(lastIndex, l.length, 'list\'s length decrease by 1 after pop test')
+
+    l.pop()
+    lastIndex = 7
+    assertThat.equal(lastIndex, l.length, 'list\'s length decrease by 1 after pop test')
+
+  })
+
+  QUnit.test('pop list\'s lastest element test', function (assertThat) {
+    let l = list()
+
+    let first = magicOne()
+    let second = magicOne()
+
+    l.push(first)
+    l.push(second)
+
+    assertThat.equal(second, l.pop(), 'pop return latest element of list test')
+    assertThat.equal(first, l.pop(), 'pop remove latest element of list test')
+
+  })
+
+</script>
+</body>
+</html>
