@@ -15,7 +15,7 @@
 <script type="application/javascript" src="../libs/qunit/qunit-2.4.1.js"></script>
 
 <!--loading List Library-->
-<script type="application/javascript" src="../libs/list.js"></script>
+<script type="application/javascript" src="../libs/list/list.js"></script>
 
 <!--loading ramdom library-->
 <script type="application/javascript" src="../libs/random/ramdom.js"></script>
@@ -67,13 +67,13 @@
   })
 
   QUnit.test('init list test', function (assertThat) {
-    let l = list()
+    let l = new List()
     assertThat.equal(typeof l, typeof {}, 'assert that list() function return an object')
     assertThat.equal(0, l.length, 'test that list object have a length property')
   })
 
   QUnit.test('list manipulate its length during push test', function (assertThat) {
-    let l = list()
+    let l = new List()
 
     l.push(magicOne())
     assertThat.equal(1, l.length, 'length become 1 after fist pushed')
@@ -92,7 +92,7 @@
   })
 
   QUnit.test('read pushed element from list test', function (assertThat) {
-    let l = list()
+    let l = new List()
     let first = magicOne()
 
     l.push(first)
@@ -112,7 +112,7 @@
   })
 
   QUnit.test('list manipulate its length during pop test', function (assertThat) {
-    let l = list()
+    let l = new List()
 
     // prepare some dummie datas
     let index = 0
@@ -137,7 +137,7 @@
   })
 
   QUnit.test('pop list\'s lastest element test', function (assertThat) {
-    let l = list()
+    let l = new List()
 
     let first = magicOne()
     let second = magicOne()
